@@ -50,10 +50,10 @@ Built-in file I/O (open, write) — for logging
 
 Clone this repository:
 
-"""bash
+```bash
 git clone https://github.com/yudai-kubo-7047/auto_file_sorter_with_logging.git
 cd auto_file_sorter_with_logging
-"""
+```
 
 Place the files you want to sort in the same folder as the script
 Run the script:
