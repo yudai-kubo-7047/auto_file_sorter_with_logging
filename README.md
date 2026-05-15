@@ -5,13 +5,16 @@ A Python script that automatically organizes files in a folder by sorting them i
 Have a messy folder full of mixed file types? This tool scans the directory and automatically moves each file into a dedicated subfolder named after its extension.
 Example:
 Before:
+
 📂 my_folder/
 ├── report.pdf
 ├── photo.jpg
 ├── data.csv
 ├── notes.txt
 
+
 After running the script:
+
 📂 my_folder/
 ├── 📂 pdf_folder/
 │   └── report.pdf
