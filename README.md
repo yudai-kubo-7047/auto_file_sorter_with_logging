@@ -1,8 +1,8 @@
-📁 Auto File Sorter
-A Python script that automatically organizes files in a folder by sorting them into subfolders based on their file extension.
+📁 Auto File Sorter with Logging
+A Python script that automatically organizes files by extension into subfolders — with a full activity log saved to log.txt.
 
 🚀 What It Does
-Have a messy folder full of mixed file types? This tool scans the directory and automatically moves each file into a dedicated subfolder named after its extension.
+This tool scans a folder, sorts each file into a subfolder based on its extension, and records every action to a log file. Perfect for keeping track of what was moved and when.
 Example:
 Before:
 
@@ -10,7 +10,6 @@ Before:
 ├── report.pdf
 ├── photo.jpg
 ├── data.csv
-├── notes.txt
 
 
 After running the script:
@@ -22,15 +21,20 @@ After running the script:
 │   └── photo.jpg
 ├── 📂 csv_folder/
 │   └── data.csv
-├── 📂 txt_folder/
-│   └── notes.txt
+└── log.txt  ← activity log created automatically
+
+log.txt output:
+report.pdf copied to pdf_folder
+photo.jpg copied to jpg_folder
+data.csv copied to csv_folder
 
 ✨ Features
 
-Detects file extensions automatically
-Creates subfolders on the fly (no manual setup needed)
-Copies files safely into corresponding folders
-Skips folders and files without extensions
+Automatically detects file extensions
+Creates subfolders dynamically
+Copies files into the correct subfolder
+Logs every file operation to log.txt
+Skips log.txt itself to avoid conflicts
 Prints a confirmation message for each file processed
 
 
@@ -39,31 +43,35 @@ Prints a confirmation message for each file processed
 Python 3.x
 pathlib — for file path handling
 shutil — for file copying
+Built-in file I/O (open, write) — for logging
 
 
 📦 How to Use
 
 Clone this repository:
 
-bashgit clone https://github.com/yudai-kubo-7047/auto-file-sorter.git
-cd auto-file-sorter
+bashgit clone https://github.com/yudai-kubo-7047/auto_file_sorter_with_logging.git
+cd auto_file_sorter_with_logging
 
-Place the files you want to sort in the same folder as auto_file_sorter.py
+Place the files you want to sort in the same folder as the script
 Run the script:
 
-bashpython auto_file_sorter.py
+bashpython auto_file_sorter_with_logging.py
 
-Check the newly created subfolders!
+Check the subfolders and open log.txt to review the activity log!
 
 
 💡 Why I Built This
-Managing downloaded files manually is time-consuming and error-prone. I built this tool to automate the process and practice working with Python's file system libraries (pathlib and shutil).
+This is an improved version of my auto-file-sorter project. I added logging functionality to make the tool more practical for real-world use — so users can always review what happened after the script runs.
+
+🔄 Difference from auto-file-sorter
+Featureauto-file-sorterauto-file-sorter-with-loggingSorts files by extension✅✅Creates subfolders✅✅Activity log (log.txt)❌✅Skips log file automatically❌✅
 
 📝 Notes
 
 This script copies files (does not delete originals)
+log.txt is appended each time the script runs (history is preserved)
 Files without an extension are skipped
-Already existing folders are reused safely (exist_ok=True)
 
 
 👤 Author
